@@ -1,0 +1,17 @@
+header{
+  background-image: url('../src/assets/img/pokemonheader.png');
+ background-repeat: no-repeat;
+background-size: cover;
+height: 500px;
+background-position: center;
+
+}
+
+footer{
+  background-color: rgb(208, 253, 207);
+ padding: 30px;
+  text-align: center;
+  color: rgb(13, 95, 20);
+  
+  
+}
