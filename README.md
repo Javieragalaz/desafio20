@@ -1,7 +1,6 @@
 # LINK AL VIDEO
 
-https://youtu.be/WvMeU3-uUok
-
+https://youtu.be/5wlG1sOHjRs
 
 
 # Getting Started with Create React App
