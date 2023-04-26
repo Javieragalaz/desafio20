@@ -1,13 +1,14 @@
 import '../index.css'
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Card from 'react-bootstrap/Card';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
+
 
 import { useState, useEffect } from "react";
 
@@ -37,29 +38,29 @@ const Pokemon = () => {
 
     }
 
-    const sortByNumer = () => { //ordenar pokemon por numero de pokedex
+    const sortByNumber = () => { //ordenar pokemon por numero de pokedex
         setSearch(search.sort((a, b) => {
-            if (a.entry_number > b.entry_nuymber) return 1
+            if (a.entry_number > b.entry_number) return 1
             return -1
         }))
     }
 
     const sortAlphabetic = () => {
         setSearch(search.sort((a, b) => { // orden alfabetico
-            if (a.pokemon_species.name > b.pokemon_species.name) return 1 
+            if (a.pokemon_species.name > b.pokemon_species.name) return 1
             return -1
         }))
     }
 
-    return ( 
+    return (
 
-        <div className= 'landingPage'>
-           
-            <header> </header> 
+        <div>
 
-            <Navbar className="navBar"  expand="lg">
+            <header> </header>
+
+            <Navbar className="navBar" expand="lg">
                 <Container fluid className='searchingPokemon'>
-                    <Navbar.Brand href="#" > <bg-image src= "../src/assets/img/encuentratupokemon.png"> </bg-image></Navbar.Brand> 
+                    <Navbar.Brand href="#" > {<h1>ENCUENTRA TU POKEMON!</h1>}</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -74,7 +75,7 @@ const Pokemon = () => {
                                 placeholder="Ingresa el nombre del Pokemon"
                                 className="me-2"
                                 aria-label="Search"
-                                
+
                                 onChange={(e) => { inputSearch(e) }}
                             />
                         </Form>
@@ -86,35 +87,32 @@ const Pokemon = () => {
 
                         <Dropdown.Menu>
                             <Dropdown.Item onClick={sortAlphabetic} href="#/action-1">alfabetico</Dropdown.Item>
-                            <Dropdown.Item onClick={sortByNumer} href="#/action-2">numero de pokemon</Dropdown.Item>
+                            <Dropdown.Item onClick={sortByNumber} href="#/action-2">numero de pokemon</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Container>
             </Navbar>
 
-            <div className="container" >
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                 {search.map((pokemon, index) => {
                     return (
-                        
-                        <Card key={`${index}-pokemon`} style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/${pokemon.entry_number}.png`} />
-                            <Card.Body>
-                                <Card.Title>{pokemon.pokemon_species.name}</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-                        </Card>
+                        <div className="container text-center">
+                            <div >
+                            <Card className="col m-3" key={`${index}-pokemon`} style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/${pokemon.entry_number}.png`} />
+                                <Card.Body>
+                                    <Card.Title>{pokemon.pokemon_species.name}</Card.Title>
+                                    <Card.Text>
+                                       {pokemon.entry_number}
+                                    </Card.Text>
+                          
+                                </Card.Body>
+                            </Card>
+                            </div>
+                        </div>
                     )
                 })}
-
-
             </div>
-
-
-
         </div>
     )
 

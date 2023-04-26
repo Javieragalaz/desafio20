@@ -1,1 +1,46 @@
       img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
+
+
+
+
+      ****
+
+header{
+  background-image: url('../src/assets/img/pokemonheader.png');
+ background-repeat: no-repeat;
+background-size: cover;
+height: 500px;
+background-position: center;
+
+}
+
+.navBar{
+  background-color: rgb(0,161,130);
+  font-family: 'Vina Sans', cursive;
+  
+ 
+ 
+
+}
+
+
+.searchingPokemon{
+  height: 130px;
+margin: 0%;
+  background-color: rgb(0,161,130);
+
+
+ 
+
+
+}
+#dropdown-basic{
+width: 200px;
+background-color: rgb(255, 255, 255);
+color: black;
+border: solid 2px ;
+
+font-size: 30px;
+
+}
+
